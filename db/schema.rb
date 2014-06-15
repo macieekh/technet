@@ -11,7 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140615102640) do
+ActiveRecord::Schema.define(version: 20140615123340) do
+
+  create_table "devices", force: true do |t|
+    t.string   "serial"
+    t.string   "location"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "model_id"
+  end
+
+  add_index "devices", ["model_id"], name: "index_devices_on_model_id"
+
+  create_table "models", force: true do |t|
+    t.string   "name"
+    t.string   "brand"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tickets", force: true do |t|
+    t.string   "title"
+    t.integer  "counter"
+    t.text     "issue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
