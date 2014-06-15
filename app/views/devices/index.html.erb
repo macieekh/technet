@@ -1,11 +1,11 @@
-<h1>Listing devices</h1>
+<h1>Lista urządzeń</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Serial</th>
-      <th>Location</th>
-      <th></th>
+      <th>Numer seryjny</th>
+      <th>Lokalizacja</th>
+      <th>Model</th>
       <th></th>
       <th></th>
     </tr>
@@ -16,6 +16,8 @@
       <tr>
         <td><%= device.serial %></td>
         <td><%= device.location %></td>
+        <td><%= Model.find(device.model_id.to_i).name %></td>
+        <td><center><a href="<%=new_ticket_path(:device_id => device)%>" class="btn btn-primary">Zamów Toner</a></center></td>
         <td><%= link_to 'Show', device %></td>
         <td><%= link_to 'Edit', edit_device_path(device) %></td>
         <td><%= link_to 'Destroy', device, method: :delete, data: { confirm: 'Are you sure?' } %></td>

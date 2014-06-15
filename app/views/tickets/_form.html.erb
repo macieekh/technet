@@ -23,6 +23,8 @@
     <%= f.label :issue %><br>
     <%= f.text_area :issue %>
   </div>
+    <%= f.hidden_field :device_id, :value => params[:device_id] %>
+    <%= f.hidden_field :status, :value => "open" %>
   <div class="actions">
     <%= f.submit %>
   </div>
