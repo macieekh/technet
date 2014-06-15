@@ -12,6 +12,7 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :model_id %><br>
     <%= f.collection_select(:model_id, Model.all, :id, :name, :prompt => "Wybierz urządzenie") %>
   </div>
   <div class="field">

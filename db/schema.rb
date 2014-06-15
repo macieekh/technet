@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140615123340) do
+ActiveRecord::Schema.define(version: 20140615131342) do
 
   create_table "devices", force: true do |t|
     t.string   "serial"
@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 20140615123340) do
 
   create_table "models", force: true do |t|
     t.string   "name"
-    t.string   "brand"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
