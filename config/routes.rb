@@ -1,8 +1,6 @@
 Technet::Application.routes.draw do
   resources :tickets
 
-  resources :models
-
   resources :devices
 
   devise_for :users
