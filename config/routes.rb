@@ -1,4 +1,6 @@
 Technet::Application.routes.draw do
+  resources :order_tickets
+
   resources :parts
 
   resources :models

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140617174514) do
+ActiveRecord::Schema.define(version: 20140617221253) do
 
   create_table "devices", force: true do |t|
     t.string   "serial"
@@ -28,6 +28,19 @@ ActiveRecord::Schema.define(version: 20140617174514) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "color"
+  end
+
+  create_table "order_tickets", force: true do |t|
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "parts", force: true do |t|
+    t.string   "name"
+    t.string   "code"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "tickets", force: true do |t|
