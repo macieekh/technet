@@ -15,6 +15,7 @@
   <tbody>
     <% @tickets.each do |ticket| %>
       <tr>
+        <td><%= ticket.id %></td>
         <td><%= ticket.title %></td>
         <td><%= ticket.counter %></td>
         <td><%= ticket.issue %></td>
