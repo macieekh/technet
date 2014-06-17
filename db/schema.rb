@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140615182804) do
+ActiveRecord::Schema.define(version: 20140617174514) do
 
   create_table "devices", force: true do |t|
     t.string   "serial"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20140615182804) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "color"
   end
 
   create_table "tickets", force: true do |t|
