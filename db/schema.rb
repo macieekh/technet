@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140617221253) do
+ActiveRecord::Schema.define(version: 20140619183327) do
 
   create_table "devices", force: true do |t|
     t.string   "serial"
@@ -30,10 +30,20 @@ ActiveRecord::Schema.define(version: 20140617221253) do
     t.string   "color"
   end
 
+  create_table "models_parts", id: false, force: true do |t|
+    t.integer "model_id", null: false
+    t.integer "part_id",  null: false
+  end
+
   create_table "order_tickets", force: true do |t|
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "order_tickets_parts", id: false, force: true do |t|
+    t.integer "order_ticket_id", null: false
+    t.integer "part_id",         null: false
   end
 
   create_table "parts", force: true do |t|
