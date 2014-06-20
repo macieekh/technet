@@ -17,8 +17,19 @@
   </div>
   <div class="field">
     
-      <%= f.label :color %><br>
-      <%= f.select(:color, options_for_select([["Mono", "N"], ["Kolor", "Y"]])) %>
+  <% Part.all.each do |part| %>
+  <%= part.name %>
+
+  <% end %>
+   <%= f.fields_for :parts do |builder| %>
+   <fieldset>
+     <%= builder.label :name %>
+     <%= builder.text_field :name, :value => "sssss" %>
+     <%= builder.name %>
+  </fieldset>
+  <% end %>
+
+
     
   </div>
 

@@ -1,0 +1,2 @@
+   #  <%= f.label :color %><br>
+   #  <%= f.select(:color, options_for_select([["Mono", "N"], ["Kolor", "Y"]])) %>
