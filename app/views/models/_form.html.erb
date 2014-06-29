@@ -18,16 +18,13 @@
   <div class="field">
     
   <% Part.all.each do |part| %>
-  <%= part.name %>
+    <%= check_box_tag "model[part_ids][]", part.id, @model.parts.include?(part) %>
+    <%= part.name %>  
+    
+  <% end %>
 
-  <% end %>
-   <%= f.fields_for :parts do |builder| %>
-   <fieldset>
-     <%= builder.label :name %>
-     <%= builder.text_field :name, :value => "sssss" %>
-     <%= builder.name %>
-  </fieldset>
-  <% end %>
+   
+
 
 
     

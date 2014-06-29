@@ -1,0 +1,45 @@
+<%= form_for(@model) do |f| %>
+  <% if @model.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@model.errors.count, "error") %> prohibited this model from being saved:</h2>
+
+      <ul>
+      <% @model.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    
+  <% Part.all.each do |part| %>
+    <%= part.name %>  
+    <%= check_box 'accept', part.id %>
+  <% end %>
+
+   
+<!-- to jest chyba do wyrzucenia?
+   <%= f.fields_for :parts do |builder| %>
+   <fieldset>
+     <%= builder.label :name %>
+     <%= builder.text_field :name, :value => "sssss" %>
+     <%= builder.name %>
+     <%= check_box 'accept' %>
+
+  </fieldset>
+  <% end %>
+  -->
+
+
+    
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
