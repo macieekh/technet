@@ -15,7 +15,7 @@
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <% @m = Device.find_by_sql("SELECT model_id FROM devices WHERE id = params[:device_id]") %>
+  <% @m.inspect %>
+  
 <% end %>

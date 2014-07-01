@@ -19,6 +19,12 @@
     <%= f.label :code %><br>
     <%= f.text_field :code %>
   </div>
+
+   <% Model.all.each do |model| %>
+      <%= check_box_tag "part[model_ids][]", model.id, @part.model_ids.include?(model.id) %>
+      <%= model.name %>  
+    <% end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>

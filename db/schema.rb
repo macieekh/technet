@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140619183327) do
+ActiveRecord::Schema.define(version: 20140630192029) do
 
   create_table "devices", force: true do |t|
     t.string   "serial"
@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(version: 20140619183327) do
   end
 
   create_table "models_parts", id: false, force: true do |t|
-    t.integer "model_id", null: false
     t.integer "part_id",  null: false
+    t.integer "model_id", null: false
   end
 
   create_table "order_tickets", force: true do |t|

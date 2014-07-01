@@ -17,11 +17,6 @@
   </div>
   <div class="field">
     
-    <% Part.all.each do |part| %>
-      <%= check_box_tag "model[part_ids][]", part.id, @model.part_ids.include?(part.id) %>
-      <%= part.name %>  
-    <% end %>
-
   </div>
 
   <div class="actions">
