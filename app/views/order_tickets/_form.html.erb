@@ -15,7 +15,16 @@
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>
-  <% @m = Device.find_by_sql("SELECT model_id FROM devices WHERE id = params[:device_id]") %>
-  <% @m.inspect %>
-  
+  <% @mo.parts.each do |part| %>
+      <%= check_box_tag "model[part_ids][]", part.id %>
+      <%= part.name %>  
+    <% end %>
+ 
+
+
+    <%= f.hidden_field :device_id, :value => params[:device_id] %>
+    <%= f.hidden_field :status, :value => "open" %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
 <% end %>

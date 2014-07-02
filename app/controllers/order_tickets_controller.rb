@@ -15,6 +15,7 @@ class OrderTicketsController < ApplicationController
   # GET /order_tickets/new
   def new
     @order_ticket = OrderTicket.new
+    @mo = Model.find(params[:model_id])
   end
 
   # GET /order_tickets/1/edit
@@ -69,6 +70,6 @@ class OrderTicketsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_ticket_params
-      params.require(:order_ticket).permit(:description)
+      params.require(:order_ticket).permit(:description, :counter, :issue, :device_id, :model_id, {:part_ids => []})
     end
 end

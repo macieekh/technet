@@ -17,7 +17,7 @@
         <td><%= device.serial %></td>
         <td><%= device.location %></td>
         <td><%= Model.find(device.model_id.to_i).name %></td>
-        <td><center><a href="<%=new_ticket_path(:device_id => device, :model_id => device.model_id)%>" class="btn btn-primary">Zamów Toner</a></center></td>
+        <td><center><a href="<%=new_order_ticket_path(:device_id => device, :model_id => device.model_id)%>" class="btn btn-primary">Zamów Toner</a></center></td>
         <td><%= link_to 'Show', device %></td>
         <td><%= link_to 'Edit', edit_device_path(device) %></td>
         <td><%= link_to 'Destroy', device, method: :delete, data: { confirm: 'Are you sure?' } %></td>
