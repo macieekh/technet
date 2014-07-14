@@ -19,12 +19,29 @@
     <%= f.label :code %><br>
     <%= f.text_field :code %>
   </div>
+  <br>
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Ta część pasuje do następujących urządzeń:</div>
+  
 
-   <% Model.all.each do |model| %>
-      <%= check_box_tag "part[model_ids][]", model.id, @part.model_ids.include?(model.id) %>
-      <%= model.name %>  
+  <!-- Table -->
+  <table class="table">
+  <thead>
+    <tr>
+    <td> </td>
+    </tr>
+  </thead>
+  <tbody>
+    <% Model.all.each do |model| %>
+      <tr><td><%= check_box_tag "part[model_ids][]", model.id, @part.model_ids.include?(model.id) %>
+      <%= model.name %> </td>
+      </tr>
     <% end %>
-
+  </tbody>
+  </table>
+</div>
+   
   <div class="actions">
     <%= f.submit %>
   </div>
